@@ -1,0 +1,24 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'io.github.openfeign:feign-core:12.3'
+//	implementation 'io.github.openfeign:feign-core:11.10'
+
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+	testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.0'
+	testImplementation 'org.assertj:assertj-core:3.24.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
